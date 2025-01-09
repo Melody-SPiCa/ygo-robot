@@ -1,0 +1,6 @@
+server:
+  port: 3399
+
+spring:
+  profiles:
+    active: robot
