@@ -26,6 +26,7 @@ import java.util.Objects;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+/** 静态资源初始化加载（该方法由 GPT 生成） */
 @Slf4j
 @Service
 public class StaticResourceInitializer {
@@ -124,7 +125,7 @@ public class StaticResourceInitializer {
       // ensure the parent directory exists
       File parentDir = localFile.getParentFile();
       if (!parentDir.exists() && !parentDir.mkdirs()) {
-        log.error("Failed to create directory: {}", parentDir.getAbsolutePath());
+        log.error("【初始化 静态资源加载】Failed to create directory: {}", parentDir.getAbsolutePath());
         continue;
       }
 

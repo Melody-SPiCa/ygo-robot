@@ -16,18 +16,10 @@
     </properties>
 
     <dependencies>
+        <!-- hutool 工具包-->
         <dependency>
-            <groupId>com.assertthat</groupId>
-            <artifactId>selenium-shutterbug</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-devtools-v131</artifactId>
-        </dependency>
-        <!-- Apache HttpClient 5.x -->
-        <dependency>
-            <groupId>org.apache.httpcomponents.client5</groupId>
-            <artifactId>httpclient5</artifactId>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
         </dependency>
         <!-- Selenium Java 客户端 -->
         <dependency>

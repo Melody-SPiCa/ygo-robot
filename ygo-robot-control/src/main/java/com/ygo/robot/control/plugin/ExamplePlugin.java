@@ -41,10 +41,23 @@ public class ExamplePlugin {
     System.out.println(1);
 
     for (RobotCapability robotCapability : robotCapabilitieList) {
-      val callbackMsg = robotCapability.execute(event, BotEnum.GO_CQHTTP);
+      {
+        val callbackMsg = robotCapability.execute(event, BotEnum.GO_CQHTTP);
+        if (callbackMsg != null)
+          for (CallbackMsg.Msg msg : callbackMsg.getMsgList()) {
+            log.debug("fun1 callback reply msg: {}", msg.toString());
+
+            if (msg instanceof CallbackMsg.GroupMsg gmsg)
+              bot.sendGroupMsg(gmsg.getGroupId(), gmsg.getMsg(), gmsg.getAutoEscape());
+            else if (msg instanceof CallbackMsg.SingleMsg smsg)
+              bot.sendPrivateMsg(smsg.getUserId(), smsg.getMsg(), smsg.getAutoEscape());
+          }
+      }
+
+      val callbackMsg = robotCapability.postProcess();
       if (callbackMsg != null)
         for (CallbackMsg.Msg msg : callbackMsg.getMsgList()) {
-          log.debug("fun1 callback reply msg: {}", msg.toString());
+          log.debug("fun1 callback2 reply msg: {}", msg.toString());
 
           if (msg instanceof CallbackMsg.GroupMsg gmsg)
             bot.sendGroupMsg(gmsg.getGroupId(), gmsg.getMsg(), gmsg.getAutoEscape());

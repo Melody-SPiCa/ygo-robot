@@ -51,25 +51,6 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- https://mvnrepository.com/artifact/com.assertthat/selenium-shutterbug -->
-            <dependency>
-                <groupId>com.assertthat</groupId>
-                <artifactId>selenium-shutterbug</artifactId>
-                <version>0.9.5</version>
-            </dependency>
-
-            <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools-v131 -->
-            <dependency>
-                <groupId>org.seleniumhq.selenium</groupId>
-                <artifactId>selenium-devtools-v131</artifactId>
-                <version>4.27.0</version>
-            </dependency>
-            <!-- Apache HttpClient 5.x -->
-            <dependency>
-                <groupId>org.apache.httpcomponents.client5</groupId>
-                <artifactId>httpclient5</artifactId>
-                <version>5.1</version>
-            </dependency>
             <!-- Selenium Java 客户端 -->
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>

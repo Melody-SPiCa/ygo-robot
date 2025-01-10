@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 
 /** {@link com.ygo.robot.control.capability.enums.CapabilityEnum#事件_复读} */
 @Service
-public class Capability1010 implements RobotCapability {
+public class Capability1010 extends RobotCapability {
 
   private static final Map<String, MsgCounter> groupMessageMap = new ConcurrentHashMap<>();
 

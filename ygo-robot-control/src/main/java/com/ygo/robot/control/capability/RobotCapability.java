@@ -3,9 +3,9 @@ package com.ygo.robot.control.capability;
 import com.mikuac.shiro.dto.event.message.MessageEvent;
 import com.ygo.robot.control.capability.enums.BotEnum;
 
-public interface RobotCapability {
+public abstract class RobotCapability {
 
-  default <msg extends MessageEvent> CallbackMsg execute(msg event, BotEnum botEnum) {
+  public final <msg extends MessageEvent> CallbackMsg execute(msg event, BotEnum botEnum) {
     if (can(event)) {
       switch (botEnum) {
         case BotEnum.GO_CQHTTP -> {
@@ -17,7 +17,19 @@ public interface RobotCapability {
     return null;
   }
 
-  <msg extends MessageEvent> boolean can(msg event);
+  public abstract <msg extends MessageEvent> boolean can(msg event);
 
-  <msg extends MessageEvent> CallbackMsg go_cqhttp(msg event);
+  public abstract <msg extends MessageEvent> CallbackMsg go_cqhttp(msg event);
+
+  public CallbackMsg postProcess() {
+    return null;
+  }
+
+  public String matchesRegex() {
+    return null;
+  }
+
+  public Runnable hook() {
+    return null;
+  }
 }
